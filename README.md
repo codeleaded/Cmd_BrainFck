@@ -1,193 +1,53 @@
-# Cmd_BrainFck
+# Project README
 
+## Overview
+The project is a Brainfuck interpreter written in C. It includes support for compiling and running Brainfuck code on different operating systems (Linux, Windows, Wine, and WebAssembly).
 
-## Project Overview
+## Features
+- **Brainfuck Execution**: The core feature is the ability to run Brainfuck code.
+- **Platform Support**: The project supports building and running on Linux, Windows using WINE, and WebAssembly.
 
-This project implements specialized functionality related to brainfck.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for brainfck
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
+## Project Structure
 
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
-- Make utility
-- Standard development tools
+- **C/C++ Compiler and Debugger**: GCC, Clang (for Linux), MSVC or MinGW-w64 for Windows.
+- **Make utility**: Required for building the project.
+- **Standard Development Tools**: Typically installed with the C/C++ development environment.
+- **Libraries Needed**:
+  - None specific to this project.
 
-### Build Steps
+## Build & Run
 
-1. Navigate to project directory:
-```bash
-cd Cmd_BrainFck
-```
-
-2. Build the project:
-```bash
-make -f Makefile.(os) all
-```
-
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
-```
-
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
-```
-
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
+### Building on Linux
+To build and run the Brainfuck interpreter on Linux, follow these steps:
 
 ```bash
-./build/Main(.exe)
+cd /home/codeleaded/Hecke/C/Cmd_BrainFck
+make -f Makefile.linux all  # Build the project
+make -f Makefile.linux exe   # Run the built executable
 ```
 
-Or using make:
+### Building on Windows using WINE
+To build and run the Brainfuck interpreter on Windows using WINE, follow these steps:
+
 ```bash
-make -f Makefile.(os) exe
+cd /home/codeleaded/Hecke/C/Cmd_BrainFck
+make -f Makefile.wine all  # Build the project
+make -f Makefile.wine exe   # Run the built executable in a WINE environment
 ```
 
-## Project Organization
+### Building on WebAssembly (using Emscripten)
+To build and run the Brainfuck interpreter for the web using WebAssembly, follow these steps:
 
-```
-Cmd_BrainFck/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
+```bash
+cd /home/codeleaded/Hecke/C/Cmd_BrainFck
+make -f Makefile.web all  # Build the project
+make -f Makefile.web exe   # Run the built Wasm file with wasmtime
 ```
 
-## Technical Details
+### General Build Options
+- `make -f Makefile.(os) all`: Builds the project.
+- `make -f Makefile.(os) do`: Builds and runs the executable.
+- `make -f Makefile.(os) clean`: Cleans up build artifacts.
 
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+These instructions provide a comprehensive overview of building and running the Brainfuck interpreter on different platforms.
